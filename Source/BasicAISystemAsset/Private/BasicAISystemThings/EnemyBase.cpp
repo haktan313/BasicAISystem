@@ -43,7 +43,7 @@ float AEnemyBase::SetMovementSpeed_Implementation(E_MovementState movementState)
 		newSpeed = RunSpeed;
 		break;
 	default:
-		newSpeed = 0.0f;
+		newSpeed = WalkSpeed;
 		break;
 	}
 	GetCharacterMovement()->MaxWalkSpeed = newSpeed;
@@ -61,5 +61,20 @@ FS_Range AEnemyBase::SetRange_Implementation()
 APatrolPoint* AEnemyBase::GetPatrolSpline_Implementation()
 {
 	return patrolSpline;
+}
+
+void AEnemyBase::EnemyAttack_Implementation(E_AttackType attackType)
+{
+	if(!AnimInstance)
+	{
+		return;
+	}
+	switch (attackType)
+	{
+	case E_AttackType::melee:
+		break;
+	case E_AttackType::ranged:
+		break;
+	}
 }
 

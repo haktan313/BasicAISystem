@@ -28,4 +28,6 @@ public:
 	FS_Range SetRange();
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "AI")
 	APatrolPoint* GetPatrolSpline();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "AI")
+	void EnemyAttack(E_AttackType attackType);
 };

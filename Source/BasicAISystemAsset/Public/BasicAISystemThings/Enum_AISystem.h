@@ -31,3 +31,9 @@ enum class E_ActionStates : uint8
 	attacking UMETA(DisplayName = "Attacking"),
 	inactive UMETA(DisplayName = "Inactive")
 };
+UENUM(BlueprintType)
+enum class E_AttackType : uint8
+{
+	melee UMETA(DisplayName = "Melee"),
+	ranged UMETA(DisplayName = "Ranged")
+};

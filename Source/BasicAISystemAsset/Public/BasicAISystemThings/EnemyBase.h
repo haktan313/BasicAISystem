@@ -50,4 +50,6 @@ public:
 
 	virtual APatrolPoint* GetPatrolSpline_Implementation() override;
 
+	virtual void EnemyAttack_Implementation(E_AttackType attackType) override;
+
 };
