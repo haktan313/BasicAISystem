@@ -19,4 +19,8 @@ class BASICAISYSTEMASSET_API IInterface_TokenSystem
 
 
 public:
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Token")
+	bool TookToken(int amount);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Token")
+	void GiveToken(int amount);
 };

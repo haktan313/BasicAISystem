@@ -4,6 +4,7 @@
 #include "PlayerCharacter/PlayerCharacterAISystem.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "BasicAISystemThings/TokenSystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -26,6 +27,9 @@ APlayerCharacterAISystem::APlayerCharacterAISystem()
 	GetCharacterMovement()->MaxWalkSpeed = 600.f;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	bUseControllerRotationYaw = false;
+
+	TokenSystemComponent = CreateDefaultSubobject<UTokenSystemComponent>(TEXT("TokenSystemComponent"));
+	TokenSystemComponent->currentToken = 1;
 }
 
 void APlayerCharacterAISystem::BeginPlay()
@@ -79,5 +83,17 @@ void APlayerCharacterAISystem::Look(const FInputActionValue& Value)
 
 	AddControllerYawInput(input.X);
 	AddControllerPitchInput(input.Y * -1);
+}
+
+
+
+bool APlayerCharacterAISystem::TookToken_Implementation(int amount)
+{
+	return TokenSystemComponent->TookToken(amount);
+}
+
+void APlayerCharacterAISystem::GiveToken_Implementation(int amount)
+{
+	TokenSystemComponent->GiveToken(amount);
 }
 

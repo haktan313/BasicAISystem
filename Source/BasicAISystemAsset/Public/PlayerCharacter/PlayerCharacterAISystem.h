@@ -17,6 +17,8 @@ class BASICAISYSTEMASSET_API APlayerCharacterAISystem : public ACharacter, publi
 	class USpringArmComponent* springArm;
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Camera,meta=(AllowPrivateAccess="true"))
 	class UCameraComponent* FollowCamera;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	class UTokenSystemComponent* TokenSystemComponent;
 	//Inputs
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category=Input,meta=(AllowPrivateAccess="true"))
 	class UInputMappingContext* InputMappingContext;
@@ -49,5 +51,11 @@ private://basic-movement
 	void Move(const FInputActionValue& Value);
 
 	void Look(const FInputActionValue& Value);
+
+public://Interfaces
+
+	virtual bool TookToken_Implementation(int amount) override;
+
+	virtual void GiveToken_Implementation(int amount) override;
 
 };
