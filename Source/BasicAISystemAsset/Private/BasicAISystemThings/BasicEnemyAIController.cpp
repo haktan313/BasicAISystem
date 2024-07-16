@@ -19,8 +19,8 @@ ABasicEnemyAIController::ABasicEnemyAIController(const FObjectInitializer& Objec
 	targetActor = nullptr;
 	
 	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("SightConfig"));
-	SightConfig->SightRadius = 1000.0f;
-	SightConfig->LoseSightRadius = 1200.0f;
+	SightConfig->SightRadius = 1200.0f;
+	SightConfig->LoseSightRadius = 1500.0f;
 	SightConfig->PeripheralVisionAngleDegrees = 90.0f;
 	SightConfig->DetectionByAffiliation.bDetectEnemies = true;
 	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;

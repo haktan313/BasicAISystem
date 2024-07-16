@@ -9,7 +9,7 @@
 
 UBTTask_FindNextPatrolPoint::UBTTask_FindNextPatrolPoint()
 {
-	NodeName = TEXT("MoveToPatrol");
+	NodeName = TEXT("FindNextPatrolPoint");
 }
 
 EBTNodeResult::Type UBTTask_FindNextPatrolPoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)

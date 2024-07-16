@@ -7,7 +7,7 @@
 
 UBTTask_FindRandomPatrolPoint::UBTTask_FindRandomPatrolPoint()
 {
-	NodeName = TEXT("Random Patrol");
+	NodeName = TEXT("FindRandomPatrolPoint");
 }
 
 EBTNodeResult::Type UBTTask_FindRandomPatrolPoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
