@@ -11,5 +11,8 @@ UCLASS()
 class BASICAISYSTEMASSET_API AAISystemGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
+protected:
+
+	void BeginPlay() override;
 	
 };

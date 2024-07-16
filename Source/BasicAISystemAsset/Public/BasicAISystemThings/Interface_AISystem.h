@@ -3,7 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "PatrolPoint.h"
 #include "UObject/Interface.h"
+#include "BasicAISystemThings/Structure_AISystem.h"
 #include "Interface_AISystem.generated.h"
 
 
@@ -20,4 +22,10 @@ class BASICAISYSTEMASSET_API IInterface_AISystem
 
 
 public:
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "AI")
+	float SetMovementSpeed(E_MovementState movementState);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "AI")
+	FS_Range SetRange();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "AI")
+	APatrolPoint* GetPatrolSpline();
 };
